@@ -6,6 +6,7 @@ dotenv.config();
 import profileRouter from './routes/profileDetRoute.js';
 import authRouter from './routes/user.js';
 import postsRouter from './routes/postDetRoute.js';
+import commentRouter from './routes/commentroute.js';
 import http from 'http';
 
 const app = express();
@@ -42,6 +43,8 @@ app.use('/profile', profileRouter);
 app.use('/auth', authRouter);
 
 app.use('/post', postsRouter);
+
+app.use('/comments', commentRouter);
 
 const httpServer = http.createServer(app);
 httpServer.listen(PORT, () => {
